@@ -3,7 +3,7 @@ require 'csv'
 file_data = Rails.root + 'db/data/mass_health_data.csv'
 
 def replace_signs(string)
-  string.gsub(',','').gsub('$','') if !string.nil?
+  string.gsub(',','').gsub('$','')
 end
 
 CSV.foreach(file_data, headers: true) do |row|
