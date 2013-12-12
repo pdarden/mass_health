@@ -7,7 +7,7 @@ def replace_signs(string)
 end
 
 CSV.foreach(file_data, headers: true) do |row|
-  TownHealthRecord.create(
+  TownHealthRecord.find_or_create_by(
     geography: row["Geography"],
     total_pop_y2005: replace_signs(row["total pop, year 2005"]),
     age_0_19_y2005: replace_signs(row["age 0-19, year 2005"]),
